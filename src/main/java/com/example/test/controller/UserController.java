@@ -23,25 +23,23 @@ public class UserController {
     }
 
     @GetMapping("/admin")
-    public String admin() {
-        String response = "admin";
-        System.out.println(("admin() response: " + response));
-        return response;
+    public ResponseEntity<String> admin() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/moderator")
-    public String moderator() {
-        return "moderator";
+    public ResponseEntity<String> moderator() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/user")
-    public String user() {
-        return "user";
+    public ResponseEntity<String> user() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/anonymous")
-    public String anonymous() {
-        return "anonymous";
+    public ResponseEntity<String> anonymous() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
