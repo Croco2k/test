@@ -13,9 +13,4 @@ public class UserCreateRequestDto {
     private String password;
     private RoleName role;
 
-//    public UserCreateRequestDto(JsonObject json) {
-//        this.login = json.get("login").getAsString();
-//        this.password = json.get("password").getAsString();
-//        this.role = RoleName.valueOf(json.get("role").getAsString());
-//    }
 }
