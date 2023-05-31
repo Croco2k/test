@@ -11,7 +11,7 @@ import java.util.Collections;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name = "users", indexes = @Index(name = "login_index", columnList = "login"))
 public class User implements UserDetails {
 
     @Id
