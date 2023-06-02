@@ -1,5 +1,6 @@
 package com.example.test.model.entity;
 
+import com.example.test.model.enums.RoleName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,17 +13,27 @@ import java.util.List;
 @Entity
 @Table(name = "roles")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    @Column(unique = true)
+    private RoleName name;
 
-    @OneToMany(mappedBy = "role")
+    @OneToMany(mappedBy = "role", fetch = FetchType.EAGER)
     private List<User> users = new ArrayList<>();
 
-    public Role(long l, String roleUser) {
-        this.id = id;
-        this.name = roleUser;
+    public Role(RoleName name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", name=" + name +
+                '}';
     }
 }
